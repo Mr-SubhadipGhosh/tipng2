@@ -6,8 +6,10 @@ import {Output} from '@angular/core';
     template: `
                 <h2 class="titles">Child Component</h2>
                 <div>
-                  <div class="rowitem" *ngFor="let item of listval; let i = index;">{{item | stringModi: (i+1)+". " :true}}
-                  <button (click)="onChange(i)">Edit</button></div>
+                  <div class="rowitem" *ngFor="let item of listval; let i = index;">
+                      {{item | stringModi: (i+1)+". " :true}}
+                    <button (click)="onChange(i)">Edit</button>
+                  </div>
                 </div>
              `,
     inputs: ['listval'],
