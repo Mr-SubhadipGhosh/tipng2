@@ -7,9 +7,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ContactComponent {
  constructor(private contsrv: ContactService) {}
-  profile = {};
+  profile = '';
 
   loadUser() {
-    this.contsrv.getUser().subscribe(data => this.profile = data);
+  this.profile=  this.contsrv.getUser();
   }
 }

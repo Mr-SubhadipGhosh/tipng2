@@ -5,12 +5,13 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ContactService {
   constructor (
-    private http: Http
+    //private http: Http
   ) {}
 
   getUser() {
-    return this.http.get(`https://conduit.productionready.io/api/profiles/eric`)
-    .map((res:Response) => res.json());
+    return "some string";
+    //this.http.get(`https://conduit.productionready.io/api/profiles/eric`)
+    //.map((res:Response) => res.json());
   }
 
 }
