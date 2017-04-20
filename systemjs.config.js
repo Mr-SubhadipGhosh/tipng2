@@ -10,7 +10,9 @@ System.config({
         '@angular/platform-browser-dynamic': 
              'node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
         '@angular/router': 'node_modules/@angular/router/bundles/router.umd.js',
-        'rxjs': 'node_modules/rxjs'
+        'rxjs': 'node_modules/rxjs',
+        '@angular/forms': 'node_modules/@angular/forms/bundles/forms.umd.js',
+        '@angular/http': 'node_modules/@angular/http/bundles/http.umd.js'
     },
     packages : {
         app : {

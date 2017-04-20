@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
  
+import {ParentComp} from './parent.component';
 @Component({
   selector: 'my-app',
   templateUrl: 'templates/tmp.html'
