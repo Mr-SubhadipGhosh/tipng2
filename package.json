@@ -6,7 +6,8 @@
   "scripts": {
     "start": "concurrently \"npm run watch\" \"npm run serve\"",
     "watch": "tsc -w",
-    "serve": "lite-server"
+    "serve": "lite-server",
+    "dbexe": "json-server --watch dbconfig.json --port 8989"
   },
   "author": "",
   "license": "ISC",

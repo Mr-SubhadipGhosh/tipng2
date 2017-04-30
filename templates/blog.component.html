@@ -1,0 +1,40 @@
+
+<div class="form-horizontal">
+  <fieldset>
+    <legend>Add Blog </legend>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Title</label>
+      <div class="col-lg-10">      
+              <input type="text" class="form-control" placeholder="Add Item" [(ngModel)]="textTitle">
+      </div>
+    </div>
+     <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Author</label>
+      <div class="col-lg-10">      
+              <input type="text" class="form-control" placeholder="Add Item" [(ngModel)]="textAuthor">
+      </div>
+    </div>
+     <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Description</label>
+      <div class="col-lg-10">      
+              <input type="text" class="form-control" placeholder="Add Item" [(ngModel)]="textDesc">
+      </div>
+    </div>
+    <div class="form-group">
+     <label for="inputEmail" class="col-lg-2 control-label"></label>
+      <div class="col-lg-10">      
+               <button class="btn btn-info" (click)="addBlog()">Add</button>
+               <button class="btn btn-default" (click)="clear()">Cancel</button>
+      </div>
+    </div>
+    </fieldset>
+    </div>
+             
+<div class="panel panel-primary" *ngFor="let blog of blogs">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{blog["title"]}}- {{blog["author"]}}</h3>
+  </div>
+  <div class="panel-body">
+    {{blog["description"]}}
+  </div>
+</div>

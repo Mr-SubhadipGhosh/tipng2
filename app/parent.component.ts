@@ -4,22 +4,35 @@ import {ChildComp} from './child.component';
 @Component({
     selector: 'parent',
     template: ` 
-              <h3 class="titles">Parent Component</h3>
-              <input type ="text"  [(ngModel)]="textVal">
-              <button (click)="onChange()">Change</button>
+    <div class="form-horizontal">
+  <fieldset>
+    <legend>Add Item </legend>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Item</label>
+      <div class="col-lg-10">      
+              <input type="text" class="form-control" placeholder="Add Item" [(ngModel)]="textVal">
+      </div>
+    </div>
+    <div class="form-group">
+     <label for="inputEmail" class="col-lg-2 control-label"></label>
+      <div class="col-lg-10">      
+               <button class="btn btn-info" (click)="onChange()">Add/Edit</button>
+               <button class="btn btn-default" (click)="clear()">Cancel</button>
+      </div>
+    </div>
+    </fieldset>
+    </div>
+             
                
-              <div class="child-style">
+              <div class="child-style row">
                 <child [listval]="textArr" (changed)="onChangeEdit($event)">
                 </child>
               </div>
     `,
     styles:[`
      
-          .titles {
-                    color:#0099FF
-             }
             .child-style {
-                    background-color:#ececec
+                    background-color:#eee
             }
             ` ],
 })
@@ -43,6 +56,9 @@ export class ParentComp {
     onChangeEdit(value) {
       this.selected = value;
       this.textVal = this.textArr[this.selected];
+    }
+    clear(){
+      this.textVal = "";
     }
  
 }

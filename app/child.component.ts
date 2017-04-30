@@ -1,36 +1,35 @@
 import  {Component, EventEmitter} from '@angular/core';
 import {Output} from '@angular/core';
  
+import { BlogService } from './blog/blog.service';
 @Component({
     selector: 'child',
-    template: `
-                <h2 class="titles">Child Component</h2>
-                <div>
-                  <div class="rowitem" *ngFor="let item of listval; let i = index;">
+    template: `    
+    <div class="list-group">
+  <a href="#" class="list-group-item active">
+    Item List <span class="msg">(Click to edit)</span>
+  </a>
+  <a href="#" (click)="onChange(i)" class="list-group-item" *ngFor="let item of listval; let i = index;">
                       {{item | stringModi: (i+1)+". " :true}}
-                    <button (click)="onChange(i)">Edit</button>
-                  </div>
-                </div>
+  </a>
+</div>
+                
              `,
     inputs: ['listval'],
     outputs:['changed'],
-     styles:[`
-     
-          .rowitem {
-                    border-bottom: 1px solid #888;
-                    padding: 5px;
-                    color: #888;
-                    font-size:18px;
-            }
-            .titles{
-                color:red;
+     styles:[`     
+          .msg {
+                    font-size:10px;
             }
             ` ],
+  providers: [BlogService]
 })
 export class ChildComp {
     listval: Array<string>;
     changed = new EventEmitter();
- 
+     constructor(blogSrv:BlogService) { 
+         console.log(blogSrv.baseUrl);
+  } 
     onChange(val) {
          this.changed.emit(val);
     }

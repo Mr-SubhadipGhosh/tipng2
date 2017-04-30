@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { ParentComp } from './parent.component';
 import { ContactComponent } from './contact/contact.component';
 import {AboutComponent} from './about/about.component';
+import {BlogComponent} from './blog/blog.component';
 
 export const routes: Routes = [
     {
@@ -11,5 +12,8 @@ export const routes: Routes = [
      {
         path: 'about', component: AboutComponent
     },
-    { path: '', component: ParentComp }
+    { path: '', component: ParentComp },
+    {
+    path: 'blog', component: BlogComponent
+    }
 ];

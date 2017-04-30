@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
- 
+
 import {ParentComp} from './parent.component';
 @Component({
   selector: 'my-app',
@@ -9,7 +9,8 @@ export class AppComponent {
   public value: string = "Angular2";
   public rs: string = "22";
   public xyz : number = 33;
-  constructor() { } 
+  constructor() { 
+  } 
   func(){
     this.rs="55";
     alert(this.rs);
