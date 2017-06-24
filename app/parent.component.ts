@@ -31,14 +31,17 @@ export class ParentComp {
       
       if(!this.textArr)
         this.textArr =  [];
-        if(this.selected > -1)
-        {
-          this.textArr[this.selected] = this.textVal;
-          this.selected = -1;
-        }else{
-          this.textArr.push(this.textVal);
-        }
-      this.textVal = "";
+
+       if(this.textVal && this.textVal !="") {
+          if(this.selected > -1)
+          {
+            this.textArr[this.selected] = this.textVal;
+            this.selected = -1;
+          }else{
+            this.textArr.push(this.textVal);
+          }
+          this.textVal = "";
+       }
     }
     onChangeEdit(value) {
       this.selected = value;
